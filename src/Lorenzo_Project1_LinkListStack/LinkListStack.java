@@ -245,17 +245,12 @@ public class LinkListStack extends javax.swing.JFrame {
        /// *** PUSH *** /// 
         
        lblErrMsg.setText("");       //Clear any previous err msgs
-//       if (linkCount < MAXLINKS)    //Check to ensure stack limit hasn't been reached    
-//       {
             try
             {                
                 String input = txtInputValue.getText();             //Placed user input in string var
                 int num = Integer.parseInt(input);                  //Convert var to int and throw error is not
                 myList.push(num);                                   //Push num on stack
-                
                 linkArray.add(num);
-                
-//                linkArray.set(linkCount, input);                         //If no error, place number val into num array
                 linkCount++;                                        //Increment to keep track of links and prevent overflow
                 lblCountVar.setText(Integer.toString(linkCount));   //Update GUI counter
                 listPreview += input + ", ";                        //Update string var that holds formatted link int values
@@ -267,12 +262,7 @@ public class LinkListStack extends javax.swing.JFrame {
             {
                 lblErrMsg.setText("Invalid Input, Please Enter an Integer.");   //Respond to null and Non integer number inputs
             }    
-//       }
-//       else
-//       {
-//           lblErrMsg.setText("Stack Overflow, Limit Achieved");     //Repond when stack is full
-//           txtInputValue.setText("");                               //Clear inputbox
-//       }
+
     }//GEN-LAST:event_btnPushLinkActionPerformed
 
 /**
@@ -419,8 +409,6 @@ public class LinkListStack extends javax.swing.JFrame {
     }
 
     LinkList myList = new LinkList();               //New LinkList to hold and manage links
-//    static final int MAXLINKS = 10;                 //Max amount of links for app purposes 
-//    int[] linkArray = new int[10];                  //Array to hold and keep track of stack values for visual GUI feedback
     ArrayList<Integer> linkArray = new ArrayList<>();
     private int linkCount = 0;                      //To keep track of links to prevent under and overflow
     String listPreview = "";                        //To accumulate and format to String, the integers entered into the stack
